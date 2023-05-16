@@ -1,0 +1,180 @@
+Open Watcom Linker Version 2.0 beta Apr  5 2023 00:54:13 (64-bit)
+Copyright (c) 2002-2023 The Open Watcom Contributors. All Rights Reserved.
+Portions Copyright (c) 1985-2002 Sybase, Inc. All Rights Reserved.
+Created on:       23/04/21 20:35:25
+Warning! W1027: file build//stage2/c/main.obj(/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/main.c): redefinition of _BREAK_POINT ignored
+Warning! W1027: file build//stage2/c/memory.obj(/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/memory.c): redefinition of _BREAK_POINT ignored
+Executable Image: build//stage2.bin
+creating a RAW Binary Image executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          00001d4e             0000074e
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+_ENTRY                 CODE           AUTO           00000000        00000013
+_TEXT                  CODE           AUTO           00000013        00001d3b
+CONST                  DATA           DGROUP         00001d4e        000001ad
+CONST2                 DATA           DGROUP         00001efc        00000011
+_DATA                  DATA           DGROUP         00001f0e        0000007e
+_BSS                   BSS            DGROUP         00001f8c        00000510
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: build//stage2/asm/main.obj(main.asm)
+00000000       entry
+Module: build//stage2/asm/x86.obj(x86.asm)
+00000013       _x86_Video_InputCharTeletype
+00000020       __U4D
+00000047       __U4M
+00000061       _x86_div64_32
+0000008f       _x86_Video_WriteCharTeletype
+000000a2       _x86_Disk_Reset
+000000b7       _x86_Disk_Read
+000000ee       _x86_Disk_GetDriveParams
+Module: build//stage2/c/ctype.obj(/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/ctype.c)
+00000132+      islower_
+00000170       toupper_
+Module: build//stage2/c/disk.obj(/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/disk.c)
+000001b8       DISK_Initialize_
+0000022e+      DISK_LBA2CHS_
+000002e1       DISK_ReadSectors_
+Module: build//stage2/c/fat.obj(/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/fat.c)
+00001f0e       _BREAK_POINT
+0000037e+      FAT_ReadBootSector_
+000003b2+      FAT_ReadFat_
+000003f6       FAT_Initialize_
+00000641+      FAT_ClusterToLba_
+00000697+      FAT_OpenEntry_
+00000861+      FAT_NextCluster_
+000008ea+      FAT_Read_
+00000c4e       FAT_ReadEntry_
+00000ca7       FAT_Close_
+00000d25+      FAT_FindFile_
+00000e5f       FAT_Open_
+Module: build//stage2/c/main.obj(/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/main.c)
+00000fd9+      token_hunter_
+0000104b+      ls_
+000010f3+      help_
+00001112+      handle_buffer_
+00001179+      handle_character_
+000011e2       _cstart_
+00001f1a+      _g_data
+00001f1e+      _command_table
+00001f82+      _cmds
+00001f94+      _cwd
+00002094+      _buffer
+00002494+      _disk
+Module: build//stage2/c/memory.obj(/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/memory.c)
+0000129c       memcpy_
+00001314       memset_
+00001373       memcmp_
+000013f0+      malloc_
+00001475+      free_
+Module: build//stage2/c/stdio.obj(/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/stdio.c)
+00001493       putc_
+000014ba       getc_
+000014d8+      puts_
+0000150f+      puts_f_
+0000154c       _printf
+000017cf+      printf_number_
+00001a43+      print_buffer_
+00001efc+      _g_HexChars
+Module: build//stage2/c/string.obj(/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/string.c)
+00001abf       strchr_
+00001b1a+      strcpy_
+00001b8e       strlen_
+00001bc9       strcmp_
+00001c5b       strtok_
+Module: build//stage2/c/utility.obj(/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/utility.c)
+00001cb5+      align_
+
+
+                        +---------------------+
+                        |   Module Segments   |
+                        +---------------------+
+
+! = 32-bit segment
+c = initialized communal data
+
+Module          Segment               Class           Address         Size
+======          =======               =====           =======         ====
+
+main.asm        _ENTRY                CODE           00000000         00000013
+x86.asm         _TEXT                 CODE           00000013         0000011f
+/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/ctype.c
+                _TEXT                 CODE           00000132         00000086
+                CONST                 DATA           00001d4e         00000000
+                CONST2                DATA           00001efc         00000000
+                _DATA                 DATA           00001f0e         00000000
+/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/disk.c
+                _TEXT                 CODE           000001b8         000001c6
+                CONST                 DATA           00001d4e         00000000
+                CONST2                DATA           00001efc         00000000
+                _DATA                 DATA           00001f0e         00000000
+/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/fat.c
+                _TEXT                 CODE           0000037e         00000c5b
+                CONST                 DATA           00001d4e         00000107
+                CONST2                DATA           00001efc         00000000
+                _DATA                 DATA           00001f0e         00000008
+                _BSS                  BSS            00001f8c         00000008
+/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/main.c
+                _TEXT                 CODE           00000fd9         000002c3
+                CONST                 DATA           00001e56         00000079
+                CONST2                DATA           00001efc         00000000
+                _DATA                 DATA           00001f16         00000072
+                _BSS                  BSS            00001f94         00000508
+/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/memory.c
+                _TEXT                 CODE           0000129c         000001f7
+                CONST                 DATA           00001ed0         00000028
+                CONST2                DATA           00001efc         00000000
+                _DATA                 DATA           00001f88         00000004
+/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/stdio.c
+                _TEXT                 CODE           00001493         0000062c
+                CONST                 DATA           00001ef8         00000003
+                CONST2                DATA           00001efc         00000011
+                _DATA                 DATA           00001f8c         00000000
+/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/string.c
+                _TEXT                 CODE           00001abf         000001f6
+                CONST                 DATA           00001efc         00000000
+                CONST2                DATA           00001f0e         00000000
+                _DATA                 DATA           00001f8c         00000000
+/home/brenner/code/projects/Hermes_16bit/src/boot/stage2/utility.c
+                _TEXT                 CODE           00001cb5         00000099
+                CONST                 DATA           00001efc         00000000
+                CONST2                DATA           00001f0e         00000000
+                _DATA                 DATA           00001f8c         00000000
+Warning! W1014: stack segment not found
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  0200 (512.)
+Memory size:  249c (9372.)
+Entry point address: 00000000
+Link time: 00:00.55

@@ -1,0 +1,2 @@
+string.c(58): Warning! W202: Symbol 'count' has been defined, but not referenced
+string.c(57): Warning! W202: Symbol 'length' has been defined, but not referenced
