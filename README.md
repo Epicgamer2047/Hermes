@@ -8,6 +8,7 @@
 - basic string and memory libraries
 - basic memory allocation
 - basic fat12 file system and read capabilites
+- hopefully in the future i will write a library to actually write to the floppy drive
 
 # Memory allocation
 The memory allocation is really crude and can be used with the function malloc(); defined in memory.h
@@ -27,3 +28,6 @@ if the program you write crashes the entire operating system crashes
 - getc();
 - putc();
 - puts(); 
+
+# Where is main
+- main is located in boot/stage2
