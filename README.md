@@ -31,3 +31,8 @@ if the program you write crashes the entire operating system crashes
 
 # Where is main
 - main is located in boot/stage2
+
+# How to run and Compile
+- There should be a make file inside where main is to compile main and its other libraries
+- In the src folder there should be another make file that will assemble and format the floppy drive
+- To run you need qemu-i386
